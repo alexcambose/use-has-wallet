@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["ES2015"],  
+    "module": "ES6",
+    "types": [
+      "node",
+      "jest"
+    ],
+    "declaration": true,                              
+    "declarationDir": "build",
+    "sourceMap": true,                                        
+    "outDir": "./dist",
+    "esModuleInterop": true, 
+    "forceConsistentCasingInFileNames": true, 
+    "strict": true,   
+    "skipLibCheck": true
+  },
+  "files": [
+      "src/index.ts"
+    ]
+}
