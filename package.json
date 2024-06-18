@@ -28,9 +28,14 @@
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mipd": "^0.0.7"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.json && rollup -c rollup.config.js",
+    "build": "tsc -p tsconfig.json",
     "test": "jest",
     "test:watch": "yarn test -- --watchAll",
     "prebuild": "rm -rf dist && rm -rf build",
