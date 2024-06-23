@@ -21,6 +21,10 @@ concurrency:
   group: 'pages'
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: ./example
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -35,21 +39,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Specify the Node.js version
+          node-version: '20' # Specify the Node.js version
 
       - name: Install dependencies
-        working-directory: ./example
         run: npm ci
 
       - name: Build the project
-        working-directory: ./example
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        working-directory: ./example
         with:
-          path: 'build' # Upload the build directory
+          path: './example/build' # Upload the build directory
 
       - name: Deploy to GitHub Pages
         id: deployment
