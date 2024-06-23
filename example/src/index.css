@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  margin-bottom: 20px;
+}
+
+.wallets-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.wallet {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s, border 0.3s;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.wallet.installed {
+  background-color: #e0ffe0;
+  border-color: #8bc34a;
+}
+
+.wallet.not-installed {
+  background-color: #ffe0e0;
+  border-color: #f44336;
+}
+
+.wallet-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wallet-name {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.wallet-status {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #555;
 }

@@ -1,26 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
-// import { useHasWalletExtension } from 'use-has-wallet';
-function App() {
-  // const hasMetamask = useHasWalletExtension();
+import React from 'react';
+import {
+  METAMASK_RDNS,
+  COINBASE_WALLET_RDNS,
+  RAINBOW_RDNS,
+  WALLETCONNECT_RDNS,
+  useHasWalletExtension,
+} from 'use-has-wallet';
+
+const App = () => {
+  const hasMetamask = useHasWalletExtension(METAMASK_RDNS);
+  const hasCoinbase = useHasWalletExtension(COINBASE_WALLET_RDNS);
+  const hasRainbow = useHasWalletExtension(RAINBOW_RDNS);
+  const hasWalletConnect = useHasWalletExtension(WALLETCONNECT_RDNS);
+
+  const wallets = [
+    {
+      name: 'Metamask',
+      hasWallet: hasMetamask,
+    },
+    {
+      name: 'Coinbase Wallet',
+      hasWallet: hasCoinbase,
+    },
+    {
+      name: 'Rainbow',
+      hasWallet: hasRainbow,
+    },
+    {
+      name: 'WalletConnect',
+      hasWallet: hasWalletConnect,
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Wallet Status Checker</h1>
+      <div className="wallets-container">
+        {wallets.map(({ name, hasWallet, logo }) => (
+          <div
+            key={name}
+            className={`wallet ${hasWallet ? 'installed' : 'not-installed'}`}
+          >
+            <div className="wallet-details">
+              <span className="wallet-name">{name}</span>
+              <span className="wallet-status">
+                {hasWallet ? 'Installed' : 'Not Installed'}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
