@@ -1,14 +1,14 @@
 {
   "name": "use-has-wallet",
-  "version": "1.0.0",
-  "description": "simple TS library",
-  "main": "build/index.umd.js",
+  "version": "1.0.1",
+  "description": "React hook for detecting if specific wallet extensions are installed in the user's browser.",
+  "main": "dist/index.js",
   "author": "Alexandru Cambose",
   "license": "MIT",
   "files": [
-    "build"
+    "dist"
   ],
-  "typings": "build/index.d.ts",
+  "typings": "dist/index.d.ts",
   "private": false,
   "devDependencies": {
     "@babel/core": "^7.16.0",
