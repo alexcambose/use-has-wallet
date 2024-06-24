@@ -1,6 +1,6 @@
 {
   "name": "use-has-wallet",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React hook for detecting if specific wallet extensions are installed in the user's browser.",
   "main": "dist/index.js",
   "author": "Alexandru Cambose",
@@ -10,6 +10,21 @@
   ],
   "typings": "dist/index.d.ts",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexcambose/use-has-wallet"
+  },
+  "bugs": {
+    "url": "https://github.com/alexcambose/use-has-wallet/issues"
+  },
+  "homepage": "https://github.com/alexcambose/use-has-wallet#readme",
+  "keywords": [
+    "react",
+    "hook",
+    "wallet",
+    "extension",
+    "browser"
+  ],
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",

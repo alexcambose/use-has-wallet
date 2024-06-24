@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
-import { EIP6963ProviderDetail, createStore } from "mipd";
+import { useState, useEffect } from 'react';
+import { EIP6963ProviderDetail, createStore } from 'mipd';
 
 /**
  * Registered domain names (RDNS) for various wallet providers.
  */
-export const COINBASE_WALLET_RDNS = "com.coinbase.wallet";
-export const COINBASE_SMART_WALLET_RDNS = "coinbaseWalletSDK";
-export const METAMASK_RDNS = "io.metamask";
-export const RAINBOW_RDNS = "me.rainbow";
-export const WALLETCONNECT_RDNS = "walletConnect";
+export const COINBASE_WALLET_RDNS = 'com.coinbase.wallet';
+export const COINBASE_SMART_WALLET_RDNS = 'coinbaseWalletSDK';
+export const METAMASK_RDNS = 'io.metamask';
+export const RAINBOW_RDNS = 'me.rainbow';
 
 /**
  * Custom hook to check if a wallet extension is installed.
@@ -18,7 +17,6 @@ export const WALLETCONNECT_RDNS = "walletConnect";
  */
 export const useHasWalletExtension = (rdns: string): boolean => {
   const [hasWalletExtension, setHasWalletExtension] = useState(false);
-  let aa = 0;
   useEffect(() => {
     const store = createStore();
 
@@ -30,10 +28,10 @@ export const useHasWalletExtension = (rdns: string): boolean => {
     const checkWalletExtension = (
       providers: readonly EIP6963ProviderDetail<
         any,
-        | "io.metamask"
-        | "com.coinbase"
-        | "com.enkrypt"
-        | "io.zerion"
+        | 'io.metamask'
+        | 'com.coinbase'
+        | 'com.enkrypt'
+        | 'io.zerion'
         | (string & {})
       >[]
     ) => {

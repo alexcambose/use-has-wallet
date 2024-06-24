@@ -3,7 +3,6 @@ import {
   METAMASK_RDNS,
   COINBASE_WALLET_RDNS,
   RAINBOW_RDNS,
-  WALLETCONNECT_RDNS,
   useHasWalletExtension,
 } from 'use-has-wallet';
 
@@ -11,7 +10,6 @@ const App = () => {
   const hasMetamask = useHasWalletExtension(METAMASK_RDNS);
   const hasCoinbase = useHasWalletExtension(COINBASE_WALLET_RDNS);
   const hasRainbow = useHasWalletExtension(RAINBOW_RDNS);
-  const hasWalletConnect = useHasWalletExtension(WALLETCONNECT_RDNS);
 
   const wallets = [
     {
@@ -25,10 +23,6 @@ const App = () => {
     {
       name: 'Rainbow',
       hasWallet: hasRainbow,
-    },
-    {
-      name: 'WalletConnect',
-      hasWallet: hasWalletConnect,
     },
   ];
 
